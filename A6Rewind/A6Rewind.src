@@ -27,7 +27,7 @@ DEF  A6Rewind ( )
 
    curA6real = $AXIS_ACT.A6
    
-   MsgNotify("Current A6 value: %1", "Anil", curA6real)
+   MsgNotify("Current A6 value: %1", "A6Rewind", curA6real)
    
    IF curA6real == 0 THEN
       RETURN
@@ -35,7 +35,7 @@ DEF  A6Rewind ( )
    
    IF curA6real > 0 THEN
       LOOP
-         MsgNotify("Current A6 value: %1, winding down", "Anil", curA6real)
+         MsgNotify("Current A6 value: %1, winding down", "A6Rewind", curA6real)
          IF curA6real > 360 THEN
             PTP_REL {A6 -180} C_PTP C_DIS
          ELSE
@@ -55,7 +55,7 @@ DEF  A6Rewind ( )
       
    ELSE
       LOOP
-         MsgNotify("Current A6 value: %1, winding up", "Anil", curA6real)
+         MsgNotify("Current A6 value: %1, winding up", "A6Rewind", curA6real)
          IF curA6real < -360 THEN
             PTP_REL {A6 180} C_PTP C_DIS
          ELSE
